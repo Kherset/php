@@ -30,18 +30,53 @@
 //   }
 // };
 
-$notes = [];
-$action = null;
+// $notes = [];
+// $action = null;
 
-while ($action !== 'fin')  {
-  $action = readline("Bonjour ! Tapez une note, ou 'fin' pour finir.\n");
-  if ($action !== 'fin') {
-    $notes[] = (int)$action;
+// while ($action !== 'fin')  {
+//   $action = readline("Bonjour ! Tapez une note, ou 'fin' pour finir.\n");
+//   if ($action !== 'fin') {
+//     $notes[] = (int)$action;
+//   }
+// }
+
+// echo("Voici les notes :\n");
+// foreach ($notes as $note) {
+//   echo ("- $note \n");
+// }
+
+
+
+
+
+
+
+$creneaux = [];
+
+while (true) {
+  $debut = (int)readline("Veuillez entrer l'heure d'ouverture\n");
+  $fin = (int)readline("Veuillez entrer l'heure de fermeture\n");
+  if ($debut >= $fin) {
+    echo 'erreur dans le creneau';
+  } else {
+    $creneaux[] = [$debut, $fin];
+    $action = readline("Voulez vous enregistrer un nouveau creneau O/N?\n");
+    if ($action ==='N') {
+      break;
+    } else {
+
+    }
   }
 }
 
-echo("Voici les notes :\n");
-foreach ($notes as $note) {
-  echo ("- $note \n");
+$heure = readline('Entrez une heure :\n');
+$creneauxTrouve = false;
+
+foreach ($creneaux as $creneau) {
+  if ($heure >= $creneau[0] && $heure < $creneau[1]) {
+    echo('Le magasin est ouvert !');
+  } else {
+    echo('Le magasin est fermé !');
+}
 }
 ?>
