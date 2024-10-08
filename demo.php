@@ -18,15 +18,30 @@
 //   echo "- $note \n";
 // }
 
-$eleves = [
-  'cm2' => ['Jean', 'Paul', 'Arthur', 'Lucas'],
-  'cm1' => ['Aksel', 'Elio']
-];
+// $eleves = [
+//   'cm2' => ['Jean', 'Paul', 'Arthur', 'Lucas'],
+//   'cm1' => ['Aksel', 'Elio']
+// ];
 
-foreach ($eleves as $class => $listEleves) {
-  echo "Dans la classe de $class il y a \n";
-  foreach ($listEleves as $Eleve) {
-    echo "- $Eleve \n";
+// foreach ($eleves as $class => $listEleves) {
+//   echo "Dans la classe de $class il y a \n";
+//   foreach ($listEleves as $Eleve) {
+//     echo "- $Eleve \n";
+//   }
+// };
+
+$notes = [];
+$action = null;
+
+while ($action !== 'fin')  {
+  $action = readline("Bonjour ! Tapez une note, ou 'fin' pour finir.\n");
+  if ($action !== 'fin') {
+    $notes[] = (int)$action;
   }
-};
+}
+
+echo("Voici les notes :\n");
+foreach ($notes as $note) {
+  echo ("- $note \n");
+}
 ?>
