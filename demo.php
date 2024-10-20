@@ -28,24 +28,53 @@
 
 
 
-function demander_creneau($phrase = 'Veuillez entrer un creneau') {
-  echo $phrase . "\n";
-  while (true) {
-    $ouverture = (int)readline("Veuillez entrer l'heure d'ouverture : ");
-    if ($ouverture >= 0 && $ouverture <= 23) {
-      break;
-    }
-  }
-  while (true) {
-    $fermeture = (int)readline("Veuillez entrer l'heure de fermeture : ");
-    if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) {
-      break;
-    }
-  }
-  return [$ouverture, $fermeture];
-}
+// function demander_creneau($phrase = 'Veuillez entrer un creneau') {
+//   echo $phrase . "\n";
+  // while (true) {
+  //   $ouverture = (int)readline("Veuillez entrer l'heure d'ouverture : ");
+  //   if ($ouverture >= 0 && $ouverture <= 23) {
+  //     break;
+  //   }
+  // }
+  // while (true) {
+  //   $fermeture = (int)readline("Veuillez entrer l'heure de fermeture : ");
+  //   if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) {
+  //     break;
+  //   }
+  // }
+//   return [$ouverture, $fermeture];
+// }
 
-$creneau = demander_creneau();
+// $creneau = demander_creneau();
 
-var_dump($creneau)
+// var_dump($creneau)
+
+// function demander_creneaux($phrase) {
+//   echo $phrase;
+//   $answer = 'o';
+//   $horaires =[];
+//   while ($answer == 'o') {
+//     while (true) {
+//       $ouverture = (int)readline("Veuillez entrer l'heure d'ouverture : ");
+//       if ($ouverture >= 0 && $ouverture <= 23) {
+//         break;
+//       }
+//     }
+//     while (true) {
+//       $fermeture = (int)readline("Veuillez entrer l'heure de fermeture : ");
+//       if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) {
+//         break;
+//       }
+//     }
+//     $creneau = [$ouverture, $fermeture];
+//     $horaires[] = $creneau;
+//     $answer = readline("Voulez vous continuer ? (o)ui / (n)on \n");
+//   }
+//   var_dump($horaires);
+// }
+
+
+// $creneaux = demander_creneaux("Entrez vos créneaux : \n");
+
+
 ?>
